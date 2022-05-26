@@ -20,9 +20,11 @@
     }
     input[type=text],[type=password] {
       width : 100%;
-      box-sizing : border-box;
-    }
-    a#help_pw {
+      box-sizing : border-box;        /* input태그의 너비를 100%로 설정하면 input의 외각선 너비가 */
+    }                                 /* 입력칸 너비에 포함되므로 100%를 넘어 옆 칸까지 침범한다. */
+                                      /* 따라서 내부 공백(padding)과 border 두께를 box사이즈에 포함시키는 옵션인 */
+                                      /* box-sizing : border-box; 설정을 해줌으로써 100%를 초과하는 모양을 바로잡을 수 있다 */
+    a#help_pw {     
       font-size: 85%;
       color: black;
     }
