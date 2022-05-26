@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습7_p48_form태그</title>
+  <style>
+    .td_radio {
+      font-size : 70%;
+    }
+    input[type=text],[type=password], select {
+      height : 30px;
+      background-color: lightgrey;
+      border: 1px solid grey;
+    }
+    input[type=button] {
+      width : 100px;
+      height : 30px;
+    }
+    input[type=text],[type=password] {
+      width : 100%;
+      box-sizing : border-box;
+    }
+    a#help_pw {
+      font-size: 85%;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td colspan="5"><input type="text" id="name" name="name" class="full_size" placeholder="이름" width="200"></td>
+      <td width="150"></td>
+    </tr>
+    <tr>
+      <td colspan="5"><input type="text" id="id" name="id" class="full_size" placeholder="아이디" width="200"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="5"><input type="password" id="pw" name="pw" class="full_size" placeholder="비밀번호"></td>
+      <td><a href="#" id="help_pw">비밀번호 도움말</a></td>
+    </tr>
+    <tr>
+      <td colspan="5"><input type="password" id="pw" name="pwcheck" class="full_size" placeholder="비밀번호 재입력"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <select aria-placeholder="전화번호" id="tel1" name="tel1">
+          <option>010</option>
+          <option>011</option>
+          <option>016</option>
+          <option>017</option>
+          <option>018</option>
+          <option>019</option>
+        </select>
+      </td>
+      <td>-</td>
+      <td><input type="text" id="tel2" name="tel2" placeholder="1234"></td>
+      <td>-</td>
+      <td><input type="text" id="tel3" name="tel3" placeholder="5678"></td>
+      <td><input type="button" value="휴대폰 인증" onclick=";"></td>
+    </tr>
+    <tr>
+      <td colspan="5" class="td_radio">
+        <input type="radio" name="option_tel" id="option_tel1" value="1" class="radios"> 인증받은 휴대폰 번호를 대표번호로 사용&nbsp;&nbsp;
+        <input type="radio" name="option_tel" id="option_tel2" value="2" class="radios"> 다른번호 등록&nbsp;&nbsp;
+        <input type="radio" name="option_tel" id="option_tel3" value="3" class="radios"> 다음에 등록함
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="5"><input type="text" name="no_addr" id="no_addr" class="full_size" placeholder="우편번호" readonly></td>
+      <td><input type="button" value="주소찾기"></td>
+    </tr>
+  </table>
+</body>
+</html>
