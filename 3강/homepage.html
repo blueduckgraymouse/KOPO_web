@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Homepage</title>
+  <script src="https://kit.fontawesome.com/f7b993560b.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      max-width: 2100px;
+      height: 1000px;
+    }
+    header {
+      height: 70px;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(35, 35, 35);
+      font-family: 'Nanum Pen Script', cursive;
+      font-size: 170%;
+    }
+    .icon-star {
+      padding: 10px 20px;
+      display: inline-block;
+      font-size: 150%;
+      color: white;
+    }
+    header a {
+      text-decoration: none;
+      color: white;
+    }
+    header a:hover {
+      color: blue;
+    }
+    ul, li {
+      display: inline-block;
+      margin: 0;
+      padding: 10px 15px 0px 15px;
+      float: right;
+      color: white;
+    }
+    main {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      background-image: url("./background3.jpg");
+      background-size: cover;
+    }
+    .content {
+      font-size: 400%;
+      font-family: 'Nanum Pen Script', cursive;
+      color: white;
+      margin: 0 auto;
+    }
+    .btn {
+      width: 250px;
+      height: 60px;
+      border : 1px solid white;
+      background-color: rgba(255, 255, 255, 0.0);
+      color: white;
+      font-size: 30%;
+    }
+    .btn:hover {
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <span class="icon-star">★</span>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contents</a></li>
+      </ul>
+    </header>
+    <main>
+      <div class="content">
+        <span>안녕하세요, 제 이름은 임현덕입니다.<br/> 저는 풀스텍 개발자입니다.</span>
+        <br/>
+        <br/>
+        <button class="btn" onclick="location.href='https://github.com/blueduckgraymouse'">View my work&nbsp;&nbsp;<i class="fa-solid fa-angles-right"></i></button>
+    </div>
+    </main>
+  </div>  
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>display속성 기초</title>
+  <style>
+    div.div1 {
+      margin: 25px;
+      padding: 25px;
+      background-color: yellow;
+      position: relative;
+      display: inline-block;    /* div의 default display속성값은 block이다. */
+                                /* inline-block 속성값은 다른 요소와 한 줄 안에 위치하되 block형태로 공간을 차지한다.  */
+                                /* 따라서 너비나 높이 / 안쪽,바깥쪽 여백 등의 속성을 부여할 수 있다. */
+      width: 100px;             
+      height: 100px;
+    }
+
+    div.div2 {
+      display: inline;          /* inline속성값은 다른 요소와 한 줄 안에 위치한다. */
+                                /* 너비나 높이 / 안쪽,바깥쪽 여백 등의 속성을 부여 불가  */
+      position: absolute;       /* position속성을 absolute로 설정하여 div2태그가 특정 위치에 고정된다. */
+      left: 30px;
+      top: 30px;
+      background-color: pink;
+    }
+    
+    span {
+      display: block;           /* span의 display속성 default값은 inline이므로 원래는 높이나 너비 속성을 줄 수 없다. */
+      width: 100px;             /* span태그에 너비와 높이를 부여하기 위해선 block으로 설정 후 부여해야 적용이 된다. */
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="div1">div1</div>
+  <div class="div2">div2</div>
+  <div>div</div>
+  <div>div</div>
+  <span>span</span>
+  <span>span</span>
+  <h1>h1</h1>
+  <h1>h1</h1>
+  <div id="header">header</div>
+  <div id="footer">footer</div>
+  <header>header</header>
+  <footer>footer</footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>position 속성 실습</title>
+  <style>
+    .div1 {                     /* 이미지를 감싸는 4개의 공간읠 div로 선언 후 각 클래스 부여 */
+      display: inline-block;    /* inline-block으로 지정하여 div이지만 한 줄에 다른 요소와 위치할 수 있도록 설정 */
+      width: 300px;             /* 바깥 사각형을 400px*400px로 고려하고 각 div를 200px,100px로 설정 */
+      height: 100px;            /* 이미지는 200px*200px로 지정하고 2~4번째 div를 position을 absolute로 선언하여 */
+      background-color: blue; /* 뷰포트(화면 Display상의 표시 영역)를 기준으로 위치가 배치된다. */
+      text-align: center;
+      color: white;
+      line-height: 100px;
+    }
+    .div2 {
+      display: inline-block;
+      position: absolute;
+      width: 100px;
+      height: 300px;
+      background-color: greenyellow;
+      text-align: center;
+      line-height: 300px;
+    }
+    .div3 {
+      display: inline-block;
+      position: absolute;
+      width: 100px;
+      height: 300px;
+      background-color: red;
+      text-align: center;
+      line-height: 300px;
+      left: 0;
+      top: 100px;
+    }
+    .div4 {
+      display: inline-block;
+      position: absolute;
+      width: 300px;
+      height: 100px;
+      background-color: pink;
+      text-align: center;
+      line-height: 100px;
+      left: 100px;
+      top: 300px;
+    }
+    .pic {
+      display: inline-block;
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      left: 100px;
+      top: 100px;
+    }
+    .container {
+      width: 400px;
+      height: 400px;
+      border: 1px black solid;
+      position: relative;
+      left: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <img src="./dog.jpg"" alt="" class="pic"/>
+  </div>
+</body>
+</html>
