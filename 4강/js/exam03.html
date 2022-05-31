@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Template</title>
+  <style>
+    .container {
+      text-align: center;
+    }
+    ul li {
+      display: inline-block;
+    }
+    span {
+      display: inline-block;
+      width: 150px;
+      height:80px;
+      border: 1px solid black;
+      line-height:80px;
+      font-size: 130%;
+      background-color: grey;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>실습3</h1>
+    <ul>
+      <li><span onclick="myfunc(this)" class="box">html</span></li>
+      <li><span onclick="myfunc(this)" class="box">css</span></li>
+      <li><span onclick="myfunc(this)" class="box">javascript</span></li>
+    </ul>
+  </div>
+  <script>
+    function myfunc(element) {         // 클릭한 객체가 파라미터로 전달
+      let boxes = document.getElementsByClassName("box"); 
+      for (let i = 0 ; i < boxes.length ; i++) {          // 모든 박스 원상복구
+        boxes[i].style.color="white";
+        boxes[i].style.backgroundColor="grey";
+      }
+      element.style.backgroundColor="white";              // 클릭한 박스만 배경과 글자색 변경
+      element.style.color="black";
+    }
+  </script>
+</body>
+
+</html>

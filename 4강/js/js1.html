@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>javascript 기초</title>
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <script>
+    // 함수 선언
+    function myFunc(num) {
+      console.log(num);
+    }
+    myFunc(100);
+  </script>
+
+  <script>
+    // 변수 var
+    var i = 10;
+    i = 20;
+    // var i = 20; // var는 기존 변수를 다시 선언해도 에러가 나지 않음. - bad
+    console.log(i);
+    
+    // 변수 let
+    let j = 10;
+    //let j = 20;   let은 기존 변수를 다시 선언하면 에러 발생. - good
+    console.log(j);
+
+    // 상수
+    const NUM = 10;
+
+    // 데이터 타입
+    let num = 10;       // 별도의 데이터 타입 선언이 없다.
+    // num ='Hello';    // 기존에 number타입의 데이터가 저장된 변수에 문자열을 저정하면 문자열이 저장되며 문자열 타입으로 저장된다. - bad
+    let text = 'Hello';
+    //text = 10;        // 기존과 다른 타입의 데이터를 저장하면 저장은 되나 이런 식으로 사용은 하지 않는다.
+  </script>
+
+  <script>
+    // 문자열 병합
+    let name = '임현덕';
+    let age = 30;
+    let result = name + '은' + age + '살입니다.';   // bad
+    result = `${name}은 ${age}살입니다.`;           // good, `기호는 1 왼쪽 키보드
+  </script>
+
+  <script>
+    // 타입 확인, typeof - null, Boolean, number, string, ...
+    console.log(typeof 10)       // number
+    console.log(typeof 10.5)     // number
+    console.log(typeof 'Hello')  // String
+    console.log(typeof true)     // boolean    
+  </script>
+
+  <script>
+    // for문
+    let items = [1,2,3,4];      // 배열 타입
+    for (var i = 0 ; i < items.length ; i++) {
+      console.log(items[i]);
+    }
+    for (let item in items) {   // for in반복문은 배열에서 사용하지 않는다. 배열은 foreach()나 for of를 권장.
+                                // for in은 주로 json과 같이 key와 value로 이루어진 객체타입에서 주로 사용된다.
+      console.log(items[item]); // json이었다면 item에는 key값이 순서대로 들어온다. 지금은 배열이므로 0부터 증가하는 숫자가 차례로 저장된다.
+    }    
+  </script>
+
+  <script>
+    // Object, JSON형식
+    let person = {
+      name : '임현덕',
+      age : 30
+    };
+    console.log(person);
+  </script> 
+
+  <button onclick="greeting()">인사1</button>
+  <button onclick="print('안녕하세요')">인사2</button>
+</body>
+
+</html>

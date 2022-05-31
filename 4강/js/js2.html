@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Template</title>
+  <style>
+    .small-text {
+      font-size: small;
+    }
+    .big-text {
+      font-size : xx-large;
+    }
+    #box {
+      background-color: pink;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body onload="init()">   <!-- onload : 바디의 모든 내용이 완료 된 후 init()함수 호출 -->
+  <script>
+    document.write("hello world<br>");
+    document.write("hello world");
+  </script>
+
+  <div class="big-text">Hello</div>
+  <div id="target" class="small-text">Hello</div>
+  <script>
+    let $target = document.getElementById('target');    //$를 붙여 dom객체임을 명시하는 명명법.
+    console.log($target);
+  </script>
+  
+  <button onclick="changeStyle()">스타일 변경</button>
+  <script>
+        function changeStyle() {
+      $target.style.color="yellow";
+    }
+  </script>
+
+  <!-- ul>li.item*4 (emmet) -->
+  <ul>
+    <li class="item">1</li>
+    <li class="item">2</li>
+    <li class="item">3</li>
+    <li class="item">4</li>
+  </ul>
+
+  <div id="box" onmouseover="onmouseover1()" onmouseleave="onmouseleave1()"></div>
+  <script>
+    function onmouseover1() {
+      console.log("onmouseover");
+    }
+
+    function onmouseleave1() {
+      console.log("onmouseleave");
+    }    
+  </script>
+
+  <script>
+    let selector_button = document.querySelector('button');
+    console.log(selector_button);
+    let selectors_li = document.querySelectorAll('li');
+    console.log(selectors_li);
+  </script>
+
+  <button id="my_button">코드로 이벤트 연결</button>
+
+  <script>
+    function init() {
+      console.log("init()함수 호출");
+
+      // 이벤트 작성
+      let $button = document.getElementById('my_button');
+      $button.addEventListener('click', function() {
+        console.log("click in init()!!!");
+      });
+    }
+
+    console.log("바디 완료");
+  </script>
+</body>
+
+</html>
