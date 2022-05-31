@@ -1,0 +1,52 @@
+div {
+  background-color: bisque;
+  height : 300px;
+}
+
+body {
+  background-color: pink;
+  font-family: 'Nanum Gothic', sans-serif; /* 링크된 폰트 사용 */
+}
+
+p {
+  color: green;
+}
+
+/* class 셀렉터 */
+.red-text {
+  color: red;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.big-size {
+  font-size : 50px;
+}
+
+.border {
+  border-style: dashed;
+  border-width: 1px;
+}
+
+/* id셀렉터 */
+#div1 {
+  background-color: chocolate;
+}
+
+ a {
+   text-decoration: none;
+ }
+
+ a:visited {      /* 클릭한 적이 있는 a태그 */
+  color: black;
+ }
+
+ a:hover {      /* a태그 위에 마우스를 올렸을 때 */
+  color: white;
+ }
+
+ a:active {    /* a태그를 누르고 있는 상태일 때 */
+  color : green;
+}

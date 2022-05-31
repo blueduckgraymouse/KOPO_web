@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vidio태그</title>
+</head>
+
+<body>
+  <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" controls width="700" autoplay></video>
+  <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"  width="700" autoplay></video>
+  <video src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" controls width="700" autoplay muted></video>
+            <!-- autoplay는 크롬과 사파리의 엔진 정책에 의해서 사운드가 차단되어야만(mute) 자동재생이 가능하다.-->
+  <hr>
+
+  <video controls width="700">
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4XXX" type="video/mp4" autoplay muted>     <!-- 상단 소스부터 재생을 시도, 안되면 아래 소스 재생 -->
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4XXX" type="video/mp4" autoplay muted>   
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" autoplay muted>
+  </video>
+</body>
+</html>

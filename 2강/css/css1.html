@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css기초1</title>
+  <!-- 외부 선언 방식 : 가상 이상적 -->
+  <link rel="stylesheet" href="style1.css">
+<body>
+  <style>
+    /* 내부 선언 방식 */
+    div {
+      width : 100px;
+      background-color: yellow;
+      font-size : 30px;
+    }
+    h1 {
+      color: blue;
+    }
+  </style>
+
+  <h1>css 연습</h1>
+  <!-- 인라인 방식 : 쓰지 말 것 -->
+  <div style="background-color:red;">   <!-- 인라인방식이 마지막에 적용되므로 빨간 배경이 적용된다. -->
+    인라인 방식의 css 적용
+  </div>
+</body>
+</html>
