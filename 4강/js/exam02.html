@@ -3,32 +3,42 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>HTML Template</title>
-  <script>           
-    while (true) {
-      let num = Number(prompt('숫자를 입력해 주세요'));
-      if (isNaN(num)) {
-      alert("숫자를 입력해주세요.");
-      continue;
-    } else {
-      if (!(num >=1 && num <=100)) {
-        alert("1이상 100 이하를 넣어주세요.");
-        continue;
-      }
-      else {
-        for (let i = 1; i <= num; i++) {
-          console.log(i);
-        }
-        console.log("완료되었습니다.");
-        break;
-      }
+  <title>실습2</title>
+  <style>
+    #container {
+      text-align: center;
     }
+    #toggle-display {
+      display: none;
     }
-  </script>
+  </style>
 </head>
 
 <body>
+  <div id="container" class="a">
+    <h1 id="text"></h1>
+    <p id="toggle-display">
+      <button onclick="changeColor('red')">빨강</button>
+      <button onclick="changeColor('blue')">파랑</button>
+      <button onclick="changeColor('green')">초록</button>
+    </p>
+  </div>
 
+  <script>           
+    let txt = prompt('텍스트값을 입력해 주세요~');
+
+    if (txt === null || txt === '') {
+      alert("텍스트값을 입력해 주세요~");
+    } else {
+      document.getElementById("toggle-display").style.display = "block";
+      let title = document.getElementById("text").innerHTML = txt;
+    }
+
+    function changeColor(color) {
+      alert(color + "로 변경합니다.");
+      document.getElementById("text").style.color = color;
+    }
+  </script>
 </body>
 
 </html>
