@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 실습5</title>
+  <style>
+    .container {
+      text-align: center;
+    }
+    table {
+      display: inline-block;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+      <form id="formInput" method="get" action="#">
+        <table id="tableInput">
+          <tr>
+            <td>아이디</td>
+            <td><input type="text" class="id" name="id"/></td>
+          </tr>
+          <tr>
+            <td>비밀번호</td>
+            <td><input type="password" class="pw" name="pw"></td>
+          </tr>
+          <tr>
+            <td>성별</td>
+            <td>
+              <input type="radio" class="sex" name="sex" value="male">남자&nbsp;
+              <input type="radio" class="sex" name="sex" value="female">여자
+            </td>
+          </tr>
+          <tr>
+            <td>직업</td>
+            <td>
+              <select class="job" name="job">
+                <option value=""></option>
+                <option value="student">학생</option>
+                <option value="worker">직장인</option>
+                <option value="none">무직</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2">취미</td>
+            <td>
+              <input type="checkbox" class="hubby" name="develop">개발&nbsp;
+              <input type="checkbox" class="hubby" name="game">게임&nbsp;
+              <input type="checkbox" class="hubby" name="fishing">낚시&nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" class="hubby" name="exercise">운동&nbsp;
+              <input type="checkbox" class="hubby" name="book">독서&nbsp;
+              <input type="checkbox" class="hubby" name="music">음악감상&nbsp;              
+            </td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <input type="reset" value="취소">&nbsp;
+        <input type="submit" value="회원가입">
+      </form>
+    </div>
+
+  <script>        
+    $(function() {
+      $("#formInput").submit(function() {
+        let check = /^[\w.\.\-]+@[\w.\-]+\.[A-Za-z]{2,3}$/;
+        if (check.test($(".id").val()) == false) {
+          alert("이메일 형식으로 아이디를 작성하세요.");
+          return false;
+        }
+        if ($(".pw").val().length < 5) {
+          alert("비밀번호는 5자 이상입력하세요.");
+          return false;
+        }
+        if ($(".sex:checked").length < 1) {
+          alert("성별을 선택하세요.");
+          return false;
+        }
+        if ($(".job>option:selected").index() < 1) {
+          alert("직업은 1개 이상 선택하세요.");
+          return false;
+        }
+        if ($(".hubby:checked").length < 3) {
+          alert("취미는 3개 이상 선택하세요.");
+          return false;
+        }
+        alert("회원가입이 완료되었습니다.");
+      });
+    });
+  </script>
+</body>
+
+</html>

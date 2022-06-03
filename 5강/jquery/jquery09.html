@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초9</title>
+  <style>
+    .container {
+      text-align: center;
+    }
+    table {
+      display: inline-block;
+    }
+    table, tr, th, td {
+      border: 1px solid black;
+      border-spacing: 0;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <table>
+        <tr>
+          <th><input type="checkbox" class="checkAll">확인</th>
+          <th>제목</th>
+          <th>글쓴시간</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkOne"></td>
+          <td>1111</td>
+          <td>11:11:00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkOne"></td>
+          <td>2222</td>
+          <td>11:12:00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkOne"></td>
+          <td>3333</td>
+          <td>11:13:00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkOne"></td>
+          <td>4444</td>
+          <td>11:14:00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkOne"></td>
+          <td>5555</td>
+          <td>11:15:00</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkOne"></td>
+          <td>6666</td>
+          <td>11:16:00</td>
+        </tr>
+      </table>
+      <br>
+      <br>
+      <button class="btn">로그</button>
+    </div>
+  </form>
+
+  <script>
+    $(function() {
+      // 전체체크에서 확인할 것 - 눌리면 전체 체크, 풀리면 전체 해제
+      $(".checkAll").click(function() {
+        if ($(this).is(":checked")) {
+          $(".checkOne").prop("checked", "true");
+        } else {
+          $(".checkOne").each(function() {
+            $(this).prop("checked", "false");
+          });
+        }
+      });
+
+      // // 단일체크에서 확인할 것 - 현재 모두 체크되있는데 풀리면 전체케크 오프, 현재 누른거까지하면 모두 체크이면 전체체크 온
+      // $(".checkOne").click(function() {
+      //   if (!$(this).is(":checked")) {
+      //     $(".checkAll").prop("checked", "false");
+      //   }
+      //   if ($(".checkOne").is(":checked")) {
+      //     $(".checkAll").prop("checked", "true");
+      //   }
+      // });
+    });
+  </script>
+</body>
+
+</html>

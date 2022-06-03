@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초10</title>
+  <style>
+    #box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="box">
+    box
+  </div>
+
+  <script>
+    // 최소, 최대값을 파라미터로 받아 그 사이 렌던값을 반환
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    // 1~200 사이의 임의의 너비와 높이를 갖는 box로 변경
+    $('#box').click(function () {
+      // $('#box').animate({ left: '+=100px' });
+      let width = getRandomIntInclusive(1, 200);
+      let height = getRandomIntInclusive(1, 200);
+
+      $('#box').animate({
+        width: `${width}px`,
+        height: `${height}px`,
+      }, function () {
+        //$('#box').hide();
+      });
+    });
+  </script>
+</body>
+
+</html>

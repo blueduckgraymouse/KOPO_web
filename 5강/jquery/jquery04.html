@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초4</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <button id="button2" onclick="">클릭2</button>
+
+  <script>
+    $(function() {
+      $("#button2").click(function(){
+        console.log("jquery 클릭2 !!");
+      }).mouseover(function() {     // jqery 메서드는 jqery객체를 리턴하므로 이어서 메서드를 계속 걸 수 있다.
+        console.log("jquery 마우스오버 !!");
+      }).mouseleave(function() {
+        console.log("jquery 마우스리브 !!");
+      });
+    });
+  </script>
+</body>
+
+</html>

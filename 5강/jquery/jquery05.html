@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초5</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="text1">여기</div>
+  <div id="text2">여기</div>
+  <button id="button3">클릭3</button>
+
+  <script>
+    $(function() {
+      $("#button3").click(function (){
+        $('#text1').html('<b>b태그 html</b>');    // innerHTMl에 대응하는 방식
+        $('#text2').text('text()');               // innerText에 대응하는 방식
+      });
+    });
+  </script>
+</body>
+
+</html>

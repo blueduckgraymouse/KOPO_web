@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 실습1</title>
+  <style>
+    #container {
+      text-align: center;
+    }
+    #toggle-display {
+      display: none;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="container" class="a">
+    <h1 id="text"></h1>
+    <p id="toggle-display">
+      <button class="btn" value="red">빨강</button>
+      <button class="btn" value="blue">파랑</button>
+      <button class="btn" value="green">초록</button>
+    </p>
+  </div>
+
+  <script>        
+    $(function() {
+      let txt = prompt('텍스트값을 입력해 주세요~');
+
+      if (txt === null || txt === '') {
+        alert("텍스트값을 입력해 주세요~");
+      } else {
+        $("#toggle-display").css("display", "block");
+        $("#text").text(txt);
+      }
+
+      $(".btn").click(function() {
+        alert($(this).val() + "로 변경합니다.");
+        $("#text").css("color", $(this).val());
+      });
+    });
+  </script>
+</body>
+
+</html>

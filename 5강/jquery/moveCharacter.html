@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moveCharacter</title>
+  <style>
+    #container {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border: 1px solid black;
+      display: inline-block;
+    }
+    #character {
+      position: relative;
+    }
+    img {
+      width : 100px;
+      height: 100px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="container">
+    <img src="../../assets/a.gif" id="character" alt="character">
+  </div>
+
+  <script>
+    let $character = $("#character");
+    document.addEventListener('keydown', (event) => {
+      const field_width = 600;
+      const field_height = 600;
+      const size_move = 25;
+      const character_width = 100;
+      const character_height = 100;
+
+      let top = Number($character.css("top").replace('px',''));
+      let bottom = top + character_height;
+      let left = Number($character.css("left").replace('px',''));
+      let right = left + character_width;
+  
+      switch(event.key) {
+        case "ArrowUp":
+          if (top - size_move >= 0) {
+            $character.css({ top: '-=25px' });
+          }
+          break;
+        case "ArrowDown":
+          if (bottom + size_move <= field_height) {
+            $character.css({ top: '+=25px' });
+          }
+          break;      
+        case "ArrowLeft":
+          if (left - size_move >= 0) {
+            $character.css({ left: '-=25px' });
+          }
+          break;
+        case "ArrowRight":
+          if (right + size_move <= field_width) {
+            $character.css({ left: '+=25px' });
+          }
+          break;
+      };
+      
+      console.log($character.css("top") + "/" + $character.css("left"));
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초6</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="text1">여기</div>!
+  <div id="text2">여기</div>!
+  <button id="button4">클릭4</button>
+
+  <script>
+    $(function() {
+      $("#button4").click(function (){
+        $('#text1').append('<b>b태그 html</b>');    
+        $('#text2').append('text()');  // append()는 해당 요소 내에서 가장 뒤에 내용 추가 
+      });
+    });
+  </script>
+</body>
+
+</html>

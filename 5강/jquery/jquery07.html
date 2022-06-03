@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초7</title>
+  <style>
+    .big-text {
+      font-size: xx-large;
+    }
+    .color-red {
+      color: red;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="text3" class="big-text">big text</div>
+
+  <script>
+    $(function() {
+      $("#text3").mouseover(function (){
+          console.log(this);      // jquery 신텍스 안에서 this가 사용됬지만 javascript객체가 반환
+          console.log($(this));   // jquery객체로 가져오려면 $()로 감싸야한다.
+          //this.className = "color-red";      // javascript의 this를    활용한 변경
+          $(this).attr("class", "color-red");  // jQuery의     $(this)를 활용한 변경
+          //this.attr("class", "color-red");   // 신텍스 에러
+          //$(this).className = "color-red";   // 런타임 에러
+      });
+    });
+  </script>
+</body>
+
+</html>

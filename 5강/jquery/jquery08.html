@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초8</title>
+  <style>
+    .big-text {
+      font-size: xx-large;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="text3" class="big-text">big text</div>
+
+  <script>
+    $(function() {
+      $("#text3").mouseover(function (){
+         $(this).css("color", "red");     // css style 변경 문법
+      });
+    });
+  </script>
+</body>
+
+</html>

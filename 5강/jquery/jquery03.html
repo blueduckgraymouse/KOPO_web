@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 기초3</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <button id="button1" onclick="">클릭1</button>
+
+  <script>
+    // 기존 방식
+    document.getElementById("button1").addEventListener('click', function() {
+      console.log("js 클릭1 !!");           // javascript방식
+    });
+    $(function() {
+      $("#button1").on('click', function() {
+        console.log("jquery 클릭1 !!");     // jquery방식1 - 이벤트 핸들러
+      });
+
+      $("#button1").click(function(){
+        console.log("jquery 클릭2 !!");     // jquery방식2 - click 메서드
+      });
+    });
+  </script>
+</body>
+
+</html>

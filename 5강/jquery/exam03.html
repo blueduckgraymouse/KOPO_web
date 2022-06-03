@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery 실습3</title>
+  <style>
+    #header {
+      background-color: #455C9F;
+      color: white;
+      padding: 10px;
+    }
+    .content {
+      padding: 10px;                
+      background-color: #E6E7EA;
+    }
+    .item {
+      background-color: white;
+      margin: 10px;                 
+    }
+    .container {
+      width: 200px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="header">
+      임현덕님, 안녕하세요?
+    </div>
+    <div class="content">
+      페이스북 색감따라하기
+      <div class="item">
+        <b>박지성</b> SBS에서 월드컵보세요!
+      </div>
+      <div class="item">
+        <b>안정환</b> MBC죠...
+      </div>
+      <div class="item">
+        <b>이영표</b> KBS는 수신료의 가치를..
+      </div>
+    </div>
+    <div>
+      <button class="btn">등록하기</button>
+    </div>
+  </div>
+
+  <script>        
+    $(function() {
+      $(".btn").click(function() {
+        let name = prompt("작성자를 입력해주세요.");
+        let article = prompt("기사를 작성해주세요.");
+        $(".content").append(
+          `<div class="item"><b>${name}</b> ${article}</div>`);
+      });
+    });
+  </script>
+</body>
+
+</html>
