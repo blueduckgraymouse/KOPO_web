@@ -31,27 +31,21 @@
   <div class="container">
     <h1>실습3</h1>
     <ul>
-      <li><span onclick="myfunc(this)" class="box">html</span></li>
-      <li><span onclick="myfunc(this)" class="box">css</span></li>
-      <li><span onclick="myfunc(this)" class="box">javascript</span></li>
+      <li><span class="box">html</span></li>
+      <li><span class="box">css</span></li>
+      <li><span class="box">javascript</span></li>
     </ul>
   </div>
   
-  <script>
-    function myfunc(element) {         // 클릭한 객체가 파라미터로 전달
-      let boxes = document.getElementsByClassName("box"); 
-      for (let i = 0 ; i < boxes.length ; i++) {          // 모든 박스 원상복구
-        boxes[i].style.color="white";
-        boxes[i].style.backgroundColor="grey";
-      }
-      element.style.backgroundColor="white";              // 클릭한 박스만 배경과 글자색 변경
-      element.style.color="black";
-    }
-  </script>
-  <!-- 위에서 아래로 변형 -->
   <script>        
     $(function() {
-      
+      $("span[class=box]").on('click', function() {
+        $("span[class=box]").css("background", "grey");   // jQuery객체는 javascript와 다르게
+        $("span[class=box]").css("color", "white");       // 객체 내 모든 노드?에 일괄 변경 가능
+        
+        $(this).css("background", "white");
+        $(this).css("color", "black");
+      });
     });
   </script>
 </body>
