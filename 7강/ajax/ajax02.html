@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jquery방식 ajax통신 구현 (ajax() 대신 getJSON()사용)</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script>
+    $(function () {
+      $('#get_data_button').click(function () {
+        // GET 방식
+        // $('#demo').load('ajax_info.txt');
+        $.getJSON('people.json', function (json) {  // getJSON : ajax의 shorthand methods 
+          console.log(json);                        //      datatype은 json, method는 get방식
+          // $('#demo').html(JSON.stringify(json));
+          $('#demo').html(`${json.name} : ${json.skill}`);
+        });
+      });
+    });
+  </script>
+  <div id="demo"></div>
+  <button id="get_data_button">get data</button>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>실습5</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <style>
+    #main {
+      text-align: center;
+    }
+    .card {         /* 카드 스타일 */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      margin-bottom: 10px;
+      width: 75%;
+      display: inline-block;
+    }
+    .card:hover {    /* 카드 위에 올렸을 때 */
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    .container {
+      padding: 2px 16px;
+      text-align: center;
+    }
+    table tr td {
+      text-align: center;
+    }
+    img {
+      display: inline;
+      width: 200px;
+    }
+    h1 {
+      color: rgb(58, 58, 148);
+    }
+    .vote_count, .vote_average {
+      border-radius: 10%;
+      background-color: rgb(67, 67, 240);
+      color: white;
+      width: 80px;
+      height: 40px;
+      display: inline-block;
+      line-height: 40px;
+    }
+  </style>
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const movie_id = urlParams.get('id');
+    let information = null;
+
+    function loadData() {
+      fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR`)
+        .then(response => response.json())
+        .then(information => {
+          let $main = $('#main');
+          $main.append(`<div class="card">
+                          <table>
+                            <tr><td colspan="2"><h1><b>${information.title}</b></h1></td></tr>
+                            <tr><td><img src="https://image.tmdb.org/t/p/w500/${information.poster_path}"/></td>
+                            <td><span class="release_date">개봉일 : ${information.release_date}</span><br/><br/>
+                            <div class="vote_count">✔ ${information.vote_count}</div>
+                            <div class="vote_average">★ ${information.vote_average}</div></td></tr>
+                            <tr><td colspan="2"><p>${information.overview}</td></tr>
+                          </table>
+                        </div>`);
+          console.log(information);
+        });
+    } 
+  </script>
+</head>
+
+<body onload="loadData()">
+  <main id="main">
+    
+  </main>
+</body>
+
+</html>

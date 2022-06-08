@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetch API</title>
+</head>
+
+<body>
+  <script>
+    function loadDoc() {
+      console.log('start');
+
+      // 비동기 == 오래걸리는 동작
+      fetch('people.json')                  // fetch메서드의 첫번째 파라미터는 url, 두번째 파라미터는 옵션 객체 {} 
+        // .then(function (response) {      //   fetch메서드는 promise객체를 리턴
+        //   return response.text();
+        // })
+
+        // 화살표 함수 (arrow function), 람다식 (lambda exepression) : 파라미터 -> return값 or {실행코드}
+        .then(response => response.json())  // fetch메서드 리턴값인 promise객체를 네이티브 JavaScript 객체로 파싱
+        .then(json => {                     // then() 메서드 : 파라미터 1개시 promise객체가 fullfiled state일 때 실행 내용
+          console.log(json);                //                 파라미터 2개시 fullfiled state일 때 실행 내용 / rejected state일 때 실행 내용
+
+          let result = `${json.name} : ${json.skill}`;
+
+          document.getElementById('demo').innerHTML = result;
+          document.getElementById('json').innerHTML = JSON.stringify(json);
+        }, () => {
+          document.getElementById('demo').innerHTML = "비동기 통신";
+          document.getElementById('json').innerHTML = "실패";
+        });
+
+      console.log('end');
+    }
+  </script>
+  <div id="demo"></div>
+  <div id="json"></div>
+  <button onclick="loadDoc()">get data</button>
+</body>
+
+</html>
