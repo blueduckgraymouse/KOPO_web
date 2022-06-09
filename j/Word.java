@@ -40,6 +40,6 @@ public class Word {
 	
 	// i번쨰 글자가 자음인지 확인,  b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z
 	public boolean isConsonant(int i) {
-		return "bcdfghjklmnpqrstvwxz".contains(letters.substring(i, i + 1));
+		return "bcdfghjklmnpqrstvwxyz".contains(letters.substring(i, i + 1));
 	}
 }
