@@ -6,21 +6,21 @@ public class A01 {
 	public static void main(String[] args) {
 		// 입력
 		Scanner sc = new Scanner(System.in);
-		//System.out.print("입력 수:");
+		// System.out.print("입력 수:");
 		int count = sc.nextInt();
 		String[] inputs = new String[count];
-		for (int i = 0 ; i < count ; i++) {
-			//System.out.println("문자열[" + (i+1) + "] 입력 : ");
+		for (int i = 0; i < count; i++) {
+			// System.out.println("문자열[" + (i+1) + "] 입력 : ");
 			inputs[i] = sc.next();
 		}
-		
+
 		// 실행
 		StringBuffer result = answer(inputs);
-		
+
 		// 출력
 		System.out.println(result.toString());
 	}
-	
+
 	// 문자열 결합
 	public static StringBuffer answer(String[] inputs) {
 		StringBuffer result = new StringBuffer("Hello ");
