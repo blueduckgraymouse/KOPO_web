@@ -3,7 +3,7 @@ package j;
 import java.util.Scanner;
 
 public class A01 {
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 		// 입력
 		Scanner sc = new Scanner(System.in);
 		// System.out.print("입력 수:");
@@ -15,14 +15,14 @@ public class A01 {
 		}
 
 		// 실행
-		StringBuffer result = answer(inputs);
+		String result = answer(inputs);
 
 		// 출력
-		System.out.println(result.toString());
+		System.out.println(result);
 	}
 
 	// 문자열 결합
-	public static StringBuffer answer(String[] inputs) {
+	public static String answer(String[] inputs) {
 		StringBuffer result = new StringBuffer("Hello ");
 		for (int i = 0; i < inputs.length; i++) {
 			result.append(inputs[i]);
@@ -32,6 +32,6 @@ public class A01 {
 				result.append(",");
 			}
 		}
-		return result;
+		return result.toString();
 	}
 }
