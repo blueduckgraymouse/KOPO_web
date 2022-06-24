@@ -1,5 +1,5 @@
 # KOPO_web
-html, css, javascript, jquery, 
+html, css, javascript, jquery, ajax, bootstrap 활용
 
 ### git page
   https://blueduckgraymouse.github.io/kopo_web/
